@@ -1,0 +1,221 @@
+\documentclass[sjournal]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.75in}
+
+\usepackage{amsmath, amssymb, amsthm, graphicx, multirow, booktabs, enumerate, url, array, enumitem}
+\usepackage[none]{hyphenat}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{subcaption}
+
+%%% Pseudocode
+\usepackage{bm, algorithm, algorithmicx}
+\usepackage[noend]{algpseudocode}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\makeatletter
+\renewcommand{\ALG@name}{Pseudocódigo}
+\makeatother
+
+\usepackage{hyperref}
+\hypersetup{%
+ colorlinks=true,
+ linkcolor=blue,
+ citecolor=blue,
+ filecolor=magenta, 
+ urlcolor=cyan,
+} 
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Title
+\title{Título del Proyecto}
+\author{
+    \IEEEauthorblockN{%
+        Estudiante1.nombres Estudiante1.apellidos, 
+        Estudiante2.nombres Estudiante2.apellidos,\\
+        Estudiante3.nombres Estudiante3.apellidos, 
+        Estudiante4.nombres Estudiante4.apellidos
+    }\\
+    \IEEEauthorblockA{%
+        Equipo XXX, TC2008B.302\\
+        Tecnologico de Monterrey, \\
+        Monterrey 64700, Mexico, \\
+        E-mails: \{A0XXXXX, A0XXXXX, A0XXXXX, A0XXXXX\}@tec.mx
+    }%
+\thanks{%
+    Los abajo firmantes, \{Estudiante1.nombres Estudiante1.apellidos, Estudiante2.nombres Estudiante2.apellidos, Estudiante3.nombres Estudiante3.apellidos, Estudiante4.nombres Estudiante4.apellidos\}, declaramos que hemos cumplido a cabalidad con todos los requerimientos académicos y éticos exigidos por el Tecnológico de Monterrey. Afirmamos que nuestro trabajo en este proyecto ha sido realizado con respeto, honestidad y profesionalismo, en colaboración plena con el equipo, sin que haya existido ningún tipo de conflicto de interés o personal que afecte nuestra participación o la del equipo en conjunto. Este reporte ha sido firmado el día \today.
+  
+    \vspace{0.5cm}
+    
+    \noindent
+    \underline{\hspace{4cm}} \hfill \underline{\hspace{4cm}} \\
+    Estudiante1 \hfill Estudiante2
+
+    \vspace{0.5cm}
+
+    \noindent
+    \underline{\hspace{4cm}} \hfill \underline{\hspace{4cm}} \\
+    Estudiante3 \hfill Estudiante4    
+}}
+
+\begin{document}
+
+% No modificar
+\markboth{Modelación (sic) de sistemas multiagentes con gráficas computacionales, Grupo 302, TC2008B, AD2024, TEC}{Nombre del Equipo}
+
+\maketitle
+
+\begin{abstract}
+    Este es un breve resumen del proyecto, describiendo el problema, la solución propuesta y los resultados alcanzados.
+\end{abstract}
+
+% Keywords
+\begin{IEEEkeywords}
+Multiagentes, Modelado Gráfico, Simulación, Unity, Sistemas Multiagente.
+\end{IEEEkeywords}
+
+\section{Introducción}
+\IEEEPARstart{D}{escriba} la situación específica que su equipo va a resolver, el problema general y la estrategia de solución que van a modelar \cite{weiss1999multiagent}.
+
+
+\subsection{Contexto y Problema}
+Describa el problema de forma específica, incluyendo cualquier investigación relevante sobre soluciones similares y parámetros utilizados en la operación del sistema modelado.
+
+\subsection{Objetivos generales}
+Los objetivos de la solución deben ser específicos, medibles, alcanzables, relevantes y delimitados por el tiempo (SMART). A continuación se listan los objetivos del proyecto:
+\begin{itemize}
+    \item Objetivo 1
+    \item Objetivo 2
+\end{itemize}
+
+\subsection{Restricciones}
+Mencione las restricciones que presenta el sistema, como direcciones de calles, tiempos de semáforos, tipos de estacionamiento, entre otros.
+
+\subsection{Resumen de la solución propuesta}
+Describa brevemente la solución propuesta. Esta descripción debe tener más detalles que el resumen.
+
+\section{Fundamentos}
+
+\noindent
+Se deben describir muy brevemente los conceptos fundamentales utilizados para la realización del proyecto. Es importante no olvidar citar los trabajos consultados.
+
+\subsection{Ecuación de Bellman}
+
+La ecuación de Bellman, dada por
+\begin{equation}\label{Eq:Bellman}
+	Q(s, a) = r(s, a) + \gamma \sum_{s’} P(s’ | s, a) \max_{a’} Q(s’, a’),
+\end{equation}
+expresa el valor esperado de tomar una acción \(a\) en un estado \(s\), seguida de la mejor política posible en los estados futuros. Aquí, \(r(s, a)\) es la recompensa inmediata al realizar la acción \(a\) en el estado \(s\), \(\gamma\) es el factor de descuento que pondera las recompensas futuras, \(P(s' | s, a)\) es la probabilidad de transición del estado \(s\) al estado \(s'\) dado que se toma la acción \(a\), y \(\max_{a'} Q(s', a')\) es el valor máximo futuro esperado del mejor \(Q\)-valor posible en el estado \(s'\).
+
+Esta ecuación es fundamental en los métodos de optimización de políticas, como Q-learning, donde se busca maximizar la suma de recompensas futuras.
+
+
+\section{Descripción del Sistema Multiagente}
+\subsection{Modelo de los Agentes}
+Explique el comportamiento de los agentes, incluyendo creencias, planes, cooperación y aprendizaje. Incluya un diagrama de actividades y clases, además de un diagrama de estados para cada agente. No olvide incluir gráficos y ecuaciones que faciliten la interpretación del modelo propuesto.
+
+\subsection{Modelo del Entorno}
+Describa el entorno de la simulación: observable o parcialmente observable, determinista o estocástico, etc. Mencione cómo se maneja el tiempo y el espacio.
+
+\subsection{Modelo de la Negociación}
+Describa cómo los agentes interactúan, el tipo de mensajes que intercambian, y si se utilizan subastas, votaciones, etc. Incluya un diagrama de comunicaciones.
+
+\subsection{Modelo de la Interacción}
+Explique cómo el sistema multiagente interactúa con la simulación gráfica, y cómo Unity utiliza la información recibida.
+
+\section{Descripción del Modelado Gráfico}
+\subsection{Escena a Modelar}
+Presente un borrador de la escena a modelar, seguido de la versión final en Unity. Compare las expectativas con el resultado real. No olvide incluir gráficos y ecuaciones que faciliten la interpretación del modelo propuesto.
+
+\section{Algoritmo A*}
+
+Se muestra el Pseudocódigo~\ref{Alg:AstarPseudocodeES} a título de ejemplo de cómo se incluye la descripción de un algoritmo utilizado para dar solución al reto.
+
+\begin{algorithm}[!htb]
+\footnotesize
+\caption{Algoritmo de Búsqueda A*}
+\label{Alg:AstarPseudocodeES}
+\begin{algorithmic}[1]
+\Require{Grafo $G = (V, E)$, nodo inicial $s$, nodo objetivo $g$, función heurística $h(n)$}
+\Ensure{Camino más corto desde $s$ hasta $g$}
+    %
+    \State{Inicializar la lista abierta $\mathcal{O} \gets \{s\}$}
+    \State{Inicializar la lista cerrada $\mathcal{C} \gets \emptyset$}
+    \State{Establecer $g(s) \gets 0$, $f(s) \gets h(s)$, y el padre de $s$ como nulo}
+    \While{$\mathcal{O} \neq \emptyset$}
+        \State{Seleccionar $n \in \mathcal{O}$ como el nodo con el menor $f(n)$}
+        \If{$n = g$} 
+            \State{\Return Reconstruir el camino desde $s$ hasta $g$}
+        \EndIf
+        \State{Eliminar $n$ de $\mathcal{O}$ y añadir $n$ a $\mathcal{C}$}
+        \For{\textbf{cada} vecino $m$ de $n$}
+            \If{$m \in \mathcal{C}$}
+                \State{Continuar con el siguiente vecino}
+            \EndIf
+            \State{Calcular $g(m)$ tentativo $\gets g(n) + \text{coste}(n, m)$}
+            \If{$m \notin \mathcal{O}$ o $g(m)$ es menor que el $g(m)$ anterior}
+                \State{Asignar el padre de $m$ a $n$}
+                \State{Establecer $g(m) \gets g(n) + \text{coste}(n, m)$}
+                \State{Establecer $f(m) \gets g(m) + h(m)$}
+                \If{$m \notin \mathcal{O}$}
+                    \State{Añadir $m$ a $\mathcal{O}$}
+                \EndIf
+            \EndIf
+        \EndFor
+    \EndWhile
+    \State{\Return{Fracaso, no se encontró ningún camino}}
+\Statex
+
+\Procedure{Reconstruir camino}{$g$}
+    \State{Inicializar el camino como una lista vacía}
+    \State{Establecer el nodo actual como $g$}
+    \While{el nodo actual tiene un padre}
+        \State{Insertar el nodo actual al inicio del camino}
+        \State{Establecer el nodo actual como el padre del nodo actual}
+    \EndWhile
+    \State{Insertar $s$ al inicio del camino}
+    \State{\Return{camino}}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Componentes Gráficos}\label{Sec:CompGraf}
+\begin{itemize}
+    \item \textbf{Nombre del Componente 1}: Breve descripción y fuente. Se debe hacer referencia a su imagen correspondiente en la Figura~\ref{Fi:componente1}
+    \begin{figure}[!ht]\centering
+    	\includegraphics[width=0.5\linewidth]{TEC-researcher.jpg}
+	\caption{Componente gráfico 1}\label{Fi:componente1}
+    \end{figure}
+\end{itemize}
+
+\subsection{Prefabs}
+\begin{itemize}
+    \item \textbf{Nombre del Prefab}: Breve descripción de la funcionalidad y los scripts utilizados. Utilice el mismo estilo que en la Sección~\ref{Sec:CompGraf}
+\end{itemize}
+
+\subsection{Scripts}
+Describa cada script y sus interacciones con otros elementos del proyecto. Incluya la fuente si se reutilizó código. Utilice el mismo formato que en el Pseudocódigo~\ref{Alg:AstarPseudocodeES}.
+
+\section{Administración del Proyecto}
+\begin{itemize}
+    \item Vínculo al Product Backlog
+    \item Vínculo al Sprint Backlog
+\end{itemize}
+
+\section{Resultados}
+Presente los resultados obtenidos en la simulación, comparando con los objetivos propuestos. Incluir gráficos o tablas si es necesario.
+
+\section{Conclusión}
+Resuma los principales hallazgos del proyecto y la efectividad de la solución propuesta. Comente posibles mejoras y limitaciones encontradas.
+
+\section{Trabajo Futuro}
+Mencione posibles direcciones para continuar el desarrollo del proyecto en el futuro, basándose en las limitaciones observadas.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+\end{document}
