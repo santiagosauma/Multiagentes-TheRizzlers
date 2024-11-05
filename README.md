@@ -1,6 +1,6 @@
 # TheRizzlers.
 `TC2008B`
-`Socio Formador: Elettric80`
+`Socio Formador: Electric80`
 
 
 ### Intro
