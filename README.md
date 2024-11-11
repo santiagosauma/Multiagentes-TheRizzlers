@@ -4,7 +4,8 @@
 
 
 ### Intro
-Repositorio de la consultoría ficticia dirigida a Electtric80.
+Repositorio de la consultoría ficticia para el reto **Robots in an Abandoned Warehouse**.
+
 Reto de la materia Modelación de Sistemas Multiagentes con Gráficas Computacionales.
 
 ### Integrantes
