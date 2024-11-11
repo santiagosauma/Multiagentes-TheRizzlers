@@ -1,10 +1,10 @@
-# TheRizzlers.
+# Equipo 4.
 `TC2008B`
-`Socio Formador: Electric80`
+`Socio Formador: Electtric80`
 
 
 ### Intro
-Repositorio de la consultoría ficticia TheRizzlers.
+Repositorio de la consultoría ficticia dirigida a Electtric80.
 Reto de la materia Modelación de Sistemas Multiagentes con Gráficas Computacionales.
 
 ### Integrantes
